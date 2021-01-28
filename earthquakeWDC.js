@@ -3,24 +3,21 @@
 
     myConnector.getSchema = function(schemaCallback){
         var cols= [{
-            id: "id",
-            dataType: tableau.dataTypeEnum.integer
-        }, {
             id: "Insiden",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "Triwulan I",
+            id: "TriwulanI",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "Triwulan II",
+            id: "TriwulanII",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "Triwulan III",
+            id: "TriwulanIII",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "Triwulan IV",
+            id: "TriwulanIV",
             dataType: tableau.dataTypeEnum.string
-        }]
+        }];
 
         var tableSchema = {
             id: "dukcapiljabar",
@@ -37,20 +34,18 @@
                 tableData = [];
     
             // Iterate over the JSON object
-            for (i in feat) {
+            for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "id":feat[i]._id,
                     "Insiden":feat[i].Insiden,
-                    "Triwulan I":feat[i]["Triwulan I"],
-                    "Triwulan II":feat[i]["Triwulan II"],
-                    "Triwulan III":feat[i]["Triwulan III"],
-                    "Triwulan IV":feat[i]["Triwulan IV"]
+                    "TriwulanI":feat[i]["Triwulan I"],
+                    "TriwulanII":feat[i]["Triwulan II"],
+                    "TriwulanIII":feat[i]["Triwulan III"],
+                    "TriwulanIV":feat[i]["Triwulan IV"]
                 });
             }
     
             table.appendRows(tableData);
             doneCallback();
-            tableau.log("My console message goes here!");
         });
     };
     tableau.registerConnector(myConnector);
