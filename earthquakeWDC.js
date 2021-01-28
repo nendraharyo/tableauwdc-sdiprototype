@@ -44,7 +44,7 @@
                     "Triwulan I":feat[i]["Triwulan I"],
                     "Triwulan II":feat[i]["Triwulan II"],
                     "Triwulan III":feat[i]["Triwulan III"],
-                    "Triwulan IV":feat[i].["Triwulan IV"]
+                    "Triwulan IV":feat[i]["Triwulan IV"]
                 });
             }
     
