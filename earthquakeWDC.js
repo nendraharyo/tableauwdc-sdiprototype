@@ -41,10 +41,10 @@
                 tableData.push({
                     "id":feat[i]._id,
                     "Insiden":feat[i].Insiden,
-                    "Triwulan I":feat[i]."Triwulan I",
-                    "Triwulan II":feat[i]."Triwulan II",
-                    "Triwulan III":feat[i]."Triwulan III",
-                    "Triwulan IV":feat[i]."Triwulan IV"
+                    "Triwulan I":feat[i]["Triwulan I"],
+                    "Triwulan II":feat[i]["Triwulan II"],
+                    "Triwulan III":feat[i]["Triwulan III"],
+                    "Triwulan IV":feat[i].["Triwulan IV"]
                 });
             }
     
