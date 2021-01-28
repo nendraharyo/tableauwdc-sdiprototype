@@ -6,41 +6,20 @@
             id: "id",
             dataType: tableau.dataTypeEnum.integer
         }, {
-            id: "kode_kemendagri_kab",
+            id: "Insiden",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "nama_kemendagri_kab",
+            id: "Triwulan I",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "kode_kemendagri_kec",
+            id: "Triwulan II",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "nama_kemendagri_kec",
+            id: "Triwulan III",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "kode_kemendagri_kel",
+            id: "Triwulan IV",
             dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "nama_kemendagri_kel",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "kode_pekerjaan",
-            dataType: tableau.dataTypeEnum.integer
-        }, {
-            id: "nama_pekerjaan",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "jenis_kelamin",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "batas_bawah_usia",
-            dataType: tableau.dataTypeEnum.integer
-        }, {
-            id: "batas_atas_usia",
-            dataType: tableau.dataTypeEnum.integer
-        }, {
-            id: "jumlah_penduduk",
-            dataType: tableau.dataTypeEnum.integer
         }]
 
         var tableSchema = {
@@ -53,26 +32,19 @@
     };
     myConnector.getData = function (table, doneCallback){
 
-        $.getJSON("https://opendata-dev.digitalservice.id/api-bigdata/disdukcapil/jumlah_penduduk_jabar_disdukcapil_30_juni_2020?limit=2", function(resp) {
-            var feat = resp.data,
+        $.getJSON("http://128.199.221.26/api/3/action/datastore_search?resource_id=7e87cf4f-806c-44b2-90b1-fbd9a73de2cc", function(resp) {
+            var feat = resp.result.records,
                 tableData = [];
     
             // Iterate over the JSON object
             for (i in feat) {
                 tableData.push({
-                    "id":feat[i].id,
-                    "kode_kemendagri_kab": feat[i].kode_kemendagri_kab,
-                    "nama_kemendagri_kab": feat[i].nama_kemendagri_kab,
-                    "kode_kemendagri_kec": feat[i].kode_kemendagri_kec,
-                    "nama_kemendagri_kec": feat[i].nama_kemendagri_kec,
-                    "kode_kemendagri_kel": feat[i].kode_kemendagri_kel,
-                    "nama_kemendagri_kel": feat[i].nama_kemendagri_kel,
-                    "kode_pekerjaan": feat[i].kode_pekerjaan,
-                    "nama_pekerjaan": feat[i].nama_pekerjaan,
-                    "jenis_kelamin": feat[i].jenis_kelamin,
-                    "batas_bawah_usia": feat[i].batas_bawah_usia,
-                    "batas_atas_usia": feat[i].batas_atas_usia,
-                    "jumlah_penduduk": feat[i].jumlah_penduduk
+                    "id":feat[i]._id,
+                    "Insiden":feat[i].Insiden,
+                    "Triwulan I":feat[i]."Triwulan I",
+                    "Triwulan II":feat[i]."Triwulan II",
+                    "Triwulan III":feat[i]."Triwulan III",
+                    "Triwulan IV":feat[i]."Triwulan IV"
                 });
             }
     
