@@ -55,7 +55,7 @@
     tableau.registerConnector(myConnector);
     $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "Dukcapil Jabar";
+            tableau.connectionName = "Insiden Keamanan Siber";
             tableau.submit();
         });
     });
