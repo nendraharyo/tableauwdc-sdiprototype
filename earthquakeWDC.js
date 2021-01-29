@@ -20,16 +20,20 @@
         }];
 
         var tableSchema = {
-            id: "dukcapiljabar",
-            alias: "Dukcapil jabar",
+            id: "incident",
+            alias: "Insiden Keamanan Siber",
             columns: cols
         };
 
         schemaCallback([tableSchema]);
     };
     myConnector.getData = function (table, doneCallback){
+        fetch("https://cors-anywhere.herokuapp.com/http://128.199.221.26/api/3/action/datastore_search?resource_id=7e87cf4f-806c-44b2-90b1-fbd9a73de2cc")
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(resp) {
 
-        $.getJSON("http://128.199.221.26/api/3/action/datastore_search?resource_id=7e87cf4f-806c-44b2-90b1-fbd9a73de2cc", function(resp) {
             var feat = resp.result.records,
                 tableData = [];
     
