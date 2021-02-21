@@ -59,7 +59,7 @@
     tableau.registerConnector(myConnector);
     $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "Insiden Keamanan Siber";
+            tableau.connectionName = "Rasio Elektrifikasi 2019";
             tableau.submit();
         });
     });
